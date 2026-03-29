@@ -1,0 +1,7 @@
+{
+  "name": "Accom Mocca",
+  "description": "Sistema de gestão e controle operacional para moinhos de trigo.",
+  "requestFramePermissions": [
+    "geolocation"
+  ]
+}

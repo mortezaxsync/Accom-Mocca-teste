@@ -1,0 +1,56 @@
+{
+  "name": "mocca-app",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Sistema Accom Mocca para gestão de moinhos",
+  "author": "Accom Mocca Team",
+  "main": "electron/main.js",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "lint": "tsc --noEmit",
+    "preview": "vite preview",
+    "electron:dev": "concurrently \"npm run dev\" \"wait-on http://localhost:3000 && electron .\"",
+    "electron:build": "npm run build && electron-builder",
+    "build:exe": "npm run build && electron-builder --win --x64"
+  },
+  "build": {
+    "appId": "com.accom.mocca",
+    "productName": "Accom Mocca",
+    "directories": {
+      "output": "dist_electron"
+    },
+    "files": [
+      "dist/**/*",
+      "electron/**/*"
+    ],
+    "win": {
+      "target": "nsis",
+      "icon": "public/logo.png"
+    }
+  },
+  "dependencies": {
+    "@tailwindcss/vite": "^4.2.1",
+    "date-fns": "^4.1.0",
+    "firebase": "^12.6.0",
+    "html2canvas": "1.4.1",
+    "lucide-react": "^0.556.0",
+    "motion": "^12.34.3",
+    "react": "^19.2.1",
+    "react-dom": "^19.2.1",
+    "recharts": "^3.5.1",
+    "tailwindcss": "^4.2.1"
+  },
+  "devDependencies": {
+    "concurrently": "^9.2.1",
+    "electron": "^41.0.2",
+    "electron-builder": "^26.8.1",
+    "vite-plugin-pwa": "^1.2.0",
+    "wait-on": "^9.0.4",
+    "@types/node": "^22.14.0",
+    "@vitejs/plugin-react": "^5.0.0",
+    "typescript": "~5.8.2",
+    "vite": "^6.2.0"
+  }
+}
